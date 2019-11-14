@@ -27,8 +27,18 @@ if (isNaN (anni)) {
 document.getElementById ("tot-km").innerHTML = km + " " + "km";
 
 
-
 // calcolo costo
-var costoViaggio = 0.21 * km;
-console.log (costoViaggio);
-document.getElementById ("costo-biglietto").innerHTML = "€" + costoViaggio;
+var bigliettoIntero = 0.21 * km;
+var bigliettoMinorenni = 0.21 * km / 100 * 80;
+var bigliettoAnziani = 0.21 * km / 100 * 60;
+console.log (bigliettoIntero);
+console.log (bigliettoMinorenni);
+console.log (bigliettoAnziani);
+
+if (anni < 18) {
+    document.getElementById ("costo-biglietto").innerHTML = "€" + bigliettoMinorenni;
+} else if (anni > 18 < 65) {
+    document.getElementById ("costo-biglietto").innerHTML = "€" + bigliettoIntero;
+} if (anni >= 65) {
+    document.getElementById ("costo-biglietto").innerHTML = "€" + bigliettoAnziani;
+}
