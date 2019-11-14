@@ -4,26 +4,44 @@
         <meta charset="utf-8">
         <title>Biglietto treno</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="container">
-            <p>
-                Hai <span id="eta"></span> anni
-            </p>
-            <p>
-                Devi percorre <span id="tot-km"></span>
-            </p>
-            <h3>
-                Il costo del biglietto è
-                <span id="costo-biglietto"></span>
-            </h3>
-        </div>
-
-
-
-
-
+        <header>
+            <div class="logo-container">
+                <a href="#"><img id="logo" src="https://www.kombo.co/images/train/xlogo_trenitalia.png.pagespeed.ic.8xyO4vNrCS.png" alt="Logo Trenitalia"></a>
+            </div>
+            <nav class="header-menu">
+                <ul>
+                    <li>Le freccie<i class="fas fa-caret-down"></i></li>
+                    <li>Altri treni<i class="fas fa-caret-down"></i></li>
+                    <li>Trasporto regionale<i class="fas fa-caret-down"></i></li>
+                    <li>Offerte e servizi<i class="fas fa-caret-down"></i></li>
+                    <li>Carta freccia<i class="fas fa-caret-down"></i></li>
+                    <li>Info e assistenza<i class="fas fa-caret-down"></i></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="main-container">
+                <div id="calcolatore">
+                    <p>
+                        Hai <span id="eta"></span> anni
+                    </p>
+                    <p>
+                        Devi percorre <span id="tot-km"></span>
+                    </p>
+                    <p>
+                    <strong>
+                        Il costo del biglietto è di
+                        <span id="costo-biglietto"></span>
+                    </strong>
+                    </p>
+                </div>
+            </div>
+        <main>
         <script src="main.js" charset="utf-8"></script>
     </body>
 </html>

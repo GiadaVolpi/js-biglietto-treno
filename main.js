@@ -28,17 +28,22 @@ document.getElementById ("tot-km").innerHTML = km + " " + "km";
 
 
 // calcolo costo
+    // biglietto senza sconto
 var bigliettoIntero = 0.21 * km;
+    // biglietto con sconto del 20%
 var bigliettoMinorenni = 0.21 * km / 100 * 80;
+    // biglietto con sconto del 40%
 var bigliettoAnziani = 0.21 * km / 100 * 60;
 console.log (bigliettoIntero);
 console.log (bigliettoMinorenni);
 console.log (bigliettoAnziani);
 
 if (anni < 18) {
-    document.getElementById ("costo-biglietto").innerHTML = "€" + bigliettoMinorenni;
+    document.getElementById ("costo-biglietto").innerHTML = "€" + " " + bigliettoMinorenni;
 } else if (anni > 18 < 65) {
-    document.getElementById ("costo-biglietto").innerHTML = "€" + bigliettoIntero;
+    document.getElementById ("costo-biglietto").innerHTML = "€" + " "  + bigliettoIntero;
 } if (anni >= 65) {
-    document.getElementById ("costo-biglietto").innerHTML = "€" + bigliettoAnziani;
+    document.getElementById ("costo-biglietto").innerHTML = "€" + " "  + bigliettoAnziani;
 }
+
+document.getElementById("calcolatore").setAttribute("class", "visible");
