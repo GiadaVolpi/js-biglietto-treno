@@ -5,12 +5,18 @@ console.log (anni);
 if (isNaN (anni)) {
     // la variabile anni non contiene un numero
     alert ("Hai sbagliato a scrivere la tua età");
-} else if (anni < 18) {
+} else if (anni < 0) {
+    // non sei ancora nato
+    alert ("Le cicogne sono gratis!");
+} else if (anni > 0 && anni < 18) {
     // sei minorenne quindi hai il 20% di sconto
     alert ("Sul costo del tuo biglietto è applicato il 20% di sconto");
-} if (anni >= 65) {
+} else if (anni >= 65 && anni < 120) {
     // hai già compiuto i 65 anni quindi hai il 40% di sconto
     alert ("Sul costo del tuo biglietto è applicato il 40% di sconto");
+} else if (anni > 120) {
+    // hai superato i 120 anni
+    alert ("Dovresti partecipare al Guinness Wordl Record!");
 }
 
 document.getElementById ("eta").innerHTML = anni;
@@ -20,14 +26,18 @@ document.getElementById ("eta").innerHTML = anni;
 var km = parseInt (prompt("Quanti km devi percorrere? (Attenzione: non usare numeri decimali)"));
 console.log (km);
 
-if (isNaN (anni)) {
+if (isNaN (km)) {
     // la variabile km non contiene un numero
     alert ("Hai sbagliato a scrivere il numero dei kilometri");
+    document.getElementById ("tot-km").innerHTML = "ERRORE!";
+} else if (km <= 0) {
+    alert ("Non hai bisogno di un biglietto");
 }
+
 document.getElementById ("tot-km").innerHTML = km + " " + "km";
 
 
-// calcolo costo
+// calcolo costo biglietto
     // biglietto senza sconto
 var bigliettoIntero = 0.21 * km;
     // biglietto con sconto del 20%
@@ -38,12 +48,16 @@ console.log (bigliettoIntero);
 console.log (bigliettoMinorenni);
 console.log (bigliettoAnziani);
 
-if (anni < 18) {
+if (anni < 0) {
+    document.getElementById ("costo-biglietto").innerHTML = "ERRORE!";
+} else if (anni < 18) {
     document.getElementById ("costo-biglietto").innerHTML = "€" + " " + bigliettoMinorenni;
-} else if (anni > 18 < 65) {
+} else if (anni > 18 && anni < 65) {
     document.getElementById ("costo-biglietto").innerHTML = "€" + " "  + bigliettoIntero;
-} if (anni >= 65) {
+} else if (anni >= 65 && anni < 120) {
     document.getElementById ("costo-biglietto").innerHTML = "€" + " "  + bigliettoAnziani;
+} else  if (anni > 120) {
+    document.getElementById ("costo-biglietto").innerHTML = "ERRORE!";
 }
 
-document.getElementById("calcolatore").setAttribute("class", "visible");
+document.getElementById("calcolatore-container").setAttribute("class", "visible");
